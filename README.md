@@ -24,11 +24,13 @@ vue后台：https://gitee.com/gz-yami/mall4v
 
 ## 演示地址
 
+ **由于我们并不希望小程序的数据被弄混乱，我们弄了两个数据库。因此，您修改了后台的商品信息，小程序并不能看到！** 
+
 后台：<http://mall4j-admin.gz-yami.com>  账号：admin/123456
 
 小程序：1. 扫描二维码
 
-![小程序](https://gitee.com/gz-yami/mall4j/tree/master/screenshot/miniQrcode.jpg)
+![小程序](https://gitee.com/gz-yami/mall4j/raw/master/screenshot/miniQrcode.jpg)
 
 ​		2. 搜索小程序 **亚米商城** 
 
@@ -60,15 +62,15 @@ npm run build
 
 ## 相关截图
 
-![登陆](https://gitee.com/gz-yami/mall4j/tree/master/screenshot/login.png)
+![登陆](https://gitee.com/gz-yami/mall4j/raw/master/screenshot/login.png)
 
-![订单](https://gitee.com/gz-yami/mall4j/tree/master/screenshot/order.png)
+![订单](https://gitee.com/gz-yami/mall4j/raw/master/screenshot/order.png)
 
-![商品列表](https://gitee.com/gz-yami/mall4j/tree/master/screenshot/prodList.png)
+![商品列表](https://gitee.com/gz-yami/mall4j/raw/master/screenshot/prodList.png)
 
-![sku](https://gitee.com/gz-yami/mall4j/tree/master/screenshot/sku.png)
+![sku](https://gitee.com/gz-yami/mall4j/raw/master/screenshot/sku.png)
 
-![运费模板](https://gitee.com/gz-yami/mall4j/tree/master/screenshot/transport.png)
+![运费模板](https://gitee.com/gz-yami/mall4j/raw/master/screenshot/transport.png)
 
 
 
@@ -78,7 +80,7 @@ npm run build
 
 - QQ群：722835385
 
-  ![QQ群](https://gitee.com/gz-yami/mall4j/tree/master/screenshot/qqGroup.png)
+  ![QQ群](https://gitee.com/gz-yami/mall4j/raw/master/screenshot/qqGroup.png)
 
 - 论坛：<http://bbs.gz-yami.com>
 
