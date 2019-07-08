@@ -43,7 +43,7 @@ vue后台：https://gitee.com/gz-yami/mall4v
 - 安装node模块
 
 ```
-npm run install
+npm install
 ```
 
 - 运行
