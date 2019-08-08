@@ -40,7 +40,7 @@ vue中后台：https://gitee.com/gz-yami/mall4v
 
 ### 1.启动
 
-- 安装node模块
+- 安装node模块 (推荐使用淘宝镜像，`cnpm install`)
 
 ```
 npm install
