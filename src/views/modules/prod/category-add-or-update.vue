@@ -62,13 +62,6 @@ import { treeDataTranslate, idList } from '@/utils'
 import PicUpload from '@/components/pic-upload'
 export default {
   data () {
-    var validateUrl = (rule, value, callback) => {
-      if (this.dataForm.type === 1 && !/\S/.test(value)) {
-        callback(new Error('菜单URL不能为空'))
-      } else {
-        callback()
-      }
-    }
     return {
       visible: false,
       dataForm: {
@@ -82,14 +75,11 @@ export default {
         pic: ''
       },
       dataRule: {
-        name: [
-          { required: true, message: '菜单名称不能为空', trigger: 'blur' }
-        ],
-        url: [
-          { validator: validateUrl, trigger: 'blur' }
+        categoryName: [
+          { required: true, message: '分类名称不能为空', trigger: 'blur' }
         ],
         pic: [
-          { required: true, message: '菜单名称不能为空', trigger: 'blur' }
+          { required: true, message: '分类图片不能为空', trigger: 'blur' }
         ]
       },
       categoryList: [],
