@@ -32,20 +32,40 @@ http.interceptors.response.use(response => {
 }, error => {
   switch (error.response.status) {
     case 400:
-      Message.error(error.response.data)
+      Message({
+        message: error.response.data,
+        type: 'error',
+        duration: 1500,
+        customClass: 'element-error-message-zindex'
+      })
       break
     case 401:
       clearLoginInfo()
       router.push({ name: 'login' })
       break
     case 405:
-      Message.error('http请求方式有误')
+      Message({
+        message: 'http请求方式有误',
+        type: 'error',
+        duration: 1500,
+        customClass: 'element-error-message-zindex'
+      })
       break
     case 500:
-      Message.error('服务器出了点小差，请稍后再试')
+      Message({
+        message: '服务器出了点小差，请稍后再试',
+        type: 'error',
+        duration: 1500,
+        customClass: 'element-error-message-zindex'
+      })
       break
     case 501:
-      Message.error('服务器不支持当前请求所需要的某个功能')
+      Message({
+        message: '服务器不支持当前请求所需要的某个功能',
+        type: 'error',
+        duration: 1500,
+        customClass: 'element-error-message-zindex'
+      })
       break
   }
   return Promise.reject(error)
