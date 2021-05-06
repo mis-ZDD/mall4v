@@ -10,7 +10,8 @@
       <template slot-scope="scope"
                 slot="prodPropValues">
         <el-tag v-for="item in scope.row.prodPropValues"
-                :key="item.valueId">{{item.propValue}}</el-tag>
+                :key="item.valueId">{{item.propValue}}
+        </el-tag>
       </template>
       <template slot="menuLeft">
         <el-button type="primary"
@@ -102,11 +103,7 @@ export default {
     },
     // 删除
     deleteHandle (id) {
-      var ids = id
-        ? [id]
-        : this.dataListSelections.map(item => {
-          return item.transportId
-        })
+      var ids = id ? [id] : this.dataListSelections.map(item => { return item.transportId })
       this.$confirm(
         `确定对[id=${ids.join(',')}]进行[${id ? '删除' : '批量删除'}]操作?`,
         '提示',
@@ -115,33 +112,41 @@ export default {
           cancelButtonText: '取消',
           type: 'warning'
         }
-      )
-        .then(() => {
-          this.$http({
-            url: this.$http.adornUrl('/shop/transport'),
-            method: 'delete',
-            data: this.$http.adornData(ids, false)
-          }).then(({ data }) => {
-            this.$message({
-              message: '操作成功',
-              type: 'success',
-              duration: 1500,
-              onClose: () => {
-                this.getDataList(this.page)
-              }
-            })
+      ).then(() => {
+        this.$http({
+          url: this.$http.adornUrl('/shop/transport'),
+          method: 'delete',
+          data: this.$http.adornData(ids, false)
+        }).then(({data}) => {
+          this.$message({
+            message: '操作成功',
+            type: 'success',
+            duration: 1500,
+            onClose: () => {
+              // this.getDataList(this.page)
+              this.refreshChange()
+            }
           })
         })
-        .catch(() => { })
+      }).catch((e) => {
+        console.log('e: ', e)
+      })
     },
 
     // 条件查询
     searchChange (params) {
       this.getDataList(this.page, params)
     },
-
+    // 刷新回调用
+    refreshChange () {
+      this.page = this.$refs.crud.$refs.tablePage.defaultPage
+      this.getDataList(this.page)
+      this.dataListSelections = []
+      this.$refs.crud.selectClear()
+    },
     // 多选变化
     selectionChange (val) {
+      console.log('val: ', val)
       this.dataListSelections = val
     }
   }
